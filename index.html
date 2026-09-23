@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanco Wide Fireplace — Lower Mainland Fireplace Repair &amp; Installation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --char: #F8F2E7;
+    --char-2: #EFE5D3;
+    --brick: #8C6B3F;
+    --ember: #AE4B27;
+    --paper: #2A2118;
+    --ash: #6E6353;
+    --line: rgba(42,33,24,0.13);
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--char);
+    color: var(--paper);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    margin: 0;
+    color: var(--paper);
+  }
+  a{ color: inherit; }
+  p{ margin: 0; }
+  .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+
+  /* ---------- header ---------- */
+  header{
+    position: sticky; top:0; z-index: 50;
+    background: rgba(251,246,239,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content: space-between;
+    padding: 18px 28px; max-width: var(--max); margin: 0 auto;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.15rem;
+    letter-spacing: 0.2px;
+  }
+  .flame{
+    width: 14px; height: 18px; flex-shrink:0;
+    display:inline-block;
+  }
+  .flame svg{ width:100%; height:100%; display:block; }
+  .flame-path{ fill: var(--ember); transform-origin: 50% 100%; animation: flicker 3.4s ease-in-out infinite; }
+  @keyframes flicker{
+    0%, 100% { transform: scaleY(1) scaleX(1); }
+    30% { transform: scaleY(1.06) scaleX(0.96); }
+    55% { transform: scaleY(0.95) scaleX(1.04); }
+    80% { transform: scaleY(1.03) scaleX(0.98); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .flame-path{ animation: none; }
+  }
+  .navlinks{ display:flex; gap: 30px; font-size: 0.92rem; }
+  .navlinks a{ text-decoration:none; color: var(--ash); transition: color .2s; }
+  .navlinks a:hover{ color: var(--paper); }
+  .navcall{
+    font-size: 0.92rem; font-weight: 500; text-decoration:none;
+    color: var(--paper); border: 1px solid var(--line); padding: 8px 16px;
+  }
+  .navcall:hover{ border-color: var(--ember); }
+  .navlinks-mobile{ display:none; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position: relative;
+    padding: 96px 0 80px;
+    border-bottom: 1px solid var(--line);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, var(--line) 27px, var(--line) 28px),
+      repeating-linear-gradient(90deg, transparent, transparent 68px, rgba(42,33,24,0.045) 68px, rgba(42,33,24,0.045) 69px);
+    background-position: 0 0, 0 0;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.3fr 0.9fr; gap: 60px; align-items: end;
+  }
+  .eyebrow-line{
+    display:flex; align-items:center; gap: 12px; margin-bottom: 24px;
+    color: var(--ash); font-size: 0.88rem; letter-spacing: 0.02em;
+  }
+  .eyebrow-line .rule{ width: 34px; height: 1px; background: var(--brick); }
+  .hero h1{
+    font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    max-width: 13ch;
+  }
+  .hero h1 em{ font-style: italic; color: var(--ember); }
+  .hero-sub{
+    margin-top: 26px; max-width: 46ch; color: #4E4330; font-size: 1.08rem;
+  }
+  .hero-ctas{ display:flex; gap: 14px; margin-top: 34px; flex-wrap: wrap; }
+  .btn{
+    display:inline-flex; align-items:center; gap: 8px;
+    padding: 14px 26px; font-size: 0.95rem; font-weight: 500;
+    text-decoration:none; border: 1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{ background: var(--ember); color: var(--char); }
+  .btn-primary:hover{ background: #953c1c; }
+  .btn-ghost{ border-color: var(--line); color: var(--paper); }
+  .btn-ghost:hover{ border-color: var(--brick); }
+
+  .hero-card{
+    border: 1px solid var(--line);
+    padding: 30px;
+    background: var(--char-2);
+  }
+  .hero-card .kicker{ color: var(--ash); font-size: 0.85rem; margin-bottom: 6px; }
+  .hero-card .cities{
+    display:flex; flex-wrap: wrap; gap: 8px 10px; margin-top: 18px;
+  }
+  .hero-card .cities span{
+    font-size: 0.82rem; color: #4E4330; padding: 5px 10px;
+    border: 1px solid var(--line);
+  }
+  .hero-card .phone-line{
+    margin-top: 22px; padding-top: 22px; border-top: 1px solid var(--line);
+  }
+  .hero-card .phone-line a{
+    font-family: 'Fraunces', serif; font-size: 1.5rem; text-decoration:none; color: var(--paper);
+  }
+  .hero-card .phone-line a:hover{ color: var(--ember); }
+
+  /* ---------- trust strip ---------- */
+  .strip{
+    border-bottom: 1px solid var(--line);
+    padding: 22px 0;
+  }
+  .strip .wrap{
+    display:flex; justify-content: space-between; flex-wrap: wrap; gap: 16px 40px;
+    color: var(--ash); font-size: 0.88rem;
+  }
+  .strip strong{ color: var(--paper); font-weight: 500; }
+
+  /* ---------- brands ---------- */
+  .brands-section{ padding: 56px 0; border-bottom: 1px solid var(--line); }
+  .brands-label{
+    color: var(--ash); font-size: 0.85rem; text-align:center; margin-bottom: 26px;
+    letter-spacing: 0.02em;
+  }
+  .brands-grid{
+    display:flex; flex-wrap: wrap; justify-content:center; gap: 12px 14px;
+  }
+  .brand-pill{
+    font-family: 'Fraunces', serif; font-size: 1rem; color: var(--paper);
+    border: 1px solid var(--line); padding: 10px 20px; background: var(--char-2);
+  }
+
+  /* ---------- services ---------- */
+  .section{ padding: 88px 0; border-bottom: 1px solid var(--line); }
+  .section-head{
+    display:flex; justify-content: space-between; align-items: flex-end;
+    gap: 30px; margin-bottom: 48px; flex-wrap: wrap;
+  }
+  .section-head h2{ font-size: clamp(1.8rem, 3.4vw, 2.5rem); max-width: 16ch; }
+  .section-head p{ color: var(--ash); max-width: 38ch; font-size: 0.98rem; }
+
+  .services{
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .service{
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 34px 28px;
+    min-height: 220px;
+    display:flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .service::before{
+    content: ""; position: absolute; top: -1px; left: 0; right: 0; height: 2px;
+    background: var(--brick); transform: scaleX(0); transform-origin: left;
+    transition: transform .35s ease;
+  }
+  .service:hover::before{ transform: scaleX(1); }
+  .service h3{ font-size: 1.2rem; font-weight: 500; margin-bottom: 10px; }
+  .service p{ color: var(--ash); font-size: 0.92rem; }
+  .service .tag{ font-size: 0.78rem; color: var(--brick); margin-top: 18px; }
+
+  /* ---------- how it works ---------- */
+  .steps{
+    display:grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .step{
+    padding: 26px 24px 0; position: relative;
+  }
+  .step:not(:last-child)::after{
+    content: ""; position: absolute; top: 26px; right: 0; bottom: 0;
+    width: 1px; background: var(--line);
+  }
+  .step .num{ font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--brick); }
+  .step h3{ font-size: 1rem; font-weight: 500; margin: 12px 0 8px; }
+  .step p{ color: var(--ash); font-size: 0.9rem; }
+
+  /* ---------- area ---------- */
+  .area-wrap{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  }
+  .area-list{ columns: 2; column-gap: 30px; margin-top: 22px; }
+  .area-list div{
+    padding: 9px 0; border-bottom: 1px solid var(--line);
+    font-size: 0.95rem; break-inside: avoid;
+  }
+
+  /* ---------- reviews / trust ---------- */
+  .quote{
+    border-left: 2px solid var(--brick);
+    padding-left: 24px;
+    font-family: 'Fraunces', serif; font-size: 1.35rem; font-style: italic;
+    line-height: 1.5; max-width: 62ch;
+    color: #463C2B;
+  }
+  .quote-by{
+    margin-top: 18px; font-family: 'IBM Plex Sans', sans-serif; font-style: normal;
+    font-size: 0.88rem; color: var(--ash);
+  }
+
+  /* ---------- contact / ticket ---------- */
+  .contact{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 0;
+    border: 1px solid var(--line);
+  }
+  .ticket{
+    padding: 44px; border-right: 1px solid var(--line);
+  }
+  .ticket-row{
+    display:flex; justify-content: space-between; padding: 14px 0;
+    border-bottom: 1px dashed var(--line); font-size: 0.95rem;
+  }
+  .ticket-row span:first-child{ color: var(--ash); }
+  .ticket-row a{ text-decoration: none; }
+  .ticket-row a:hover{ color: var(--ember); }
+  .ticket-cta{ margin-top: 30px; }
+
+  .form-side{ padding: 44px; background: var(--char-2); }
+  .form-side h3{ font-size: 1.3rem; margin-bottom: 6px; }
+  .form-side .sub{ color: var(--ash); font-size: 0.9rem; margin-bottom: 26px; }
+  label{ display:block; font-size: 0.82rem; color: var(--ash); margin-bottom: 6px; }
+  .field{ margin-bottom: 18px; }
+  input, textarea, select{
+    width: 100%; background: transparent; border: 1px solid var(--line);
+    color: var(--paper); padding: 12px 14px; font-family: inherit; font-size: 0.95rem;
+  }
+  input:focus, textarea:focus, select:focus{
+    outline: none; border-color: var(--ember);
+  }
+  textarea{ resize: vertical; min-height: 90px; }
+  .submit-btn{
+    width: 100%; background: var(--ember); color: var(--char);
+    border: none; padding: 14px; font-size: 0.95rem; font-weight: 500; cursor:pointer;
+  }
+  .submit-btn:hover{ background: #953c1c; }
+
+  footer{
+    padding: 30px 0; color: var(--ash); font-size: 0.85rem;
+    display:flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+  }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .services{ grid-template-columns: 1fr; }
+    .steps{ grid-template-columns: 1fr 1fr; }
+    .step:nth-child(2)::after{ display:none; }
+    .area-wrap{ grid-template-columns: 1fr; }
+    .contact{ grid-template-columns: 1fr; }
+    .ticket{ border-right:none; border-bottom: 1px solid var(--line); }
+    .navlinks{ display:none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="flame"><svg viewBox="0 0 24 32"><path class="flame-path" d="M12 0C10 6 4 9 4 17c0 6 4 10 8 10s8-4 8-10C20 12 17 10 16 6c-1 3-2 4-3 4-1.5 0-2-2-1-10z"/></svg></span>
+      Vanco Wide Fireplace
+    </div>
+    <nav class="navlinks">
+      <a href="#services">Services</a>
+      <a href="#area">Service area</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="navcall" href="tel:6042997761">604&nbsp;299&nbsp;7761</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow-line"><span class="rule"></span>Serving the Lower Mainland</div>
+      <h1>Fireplaces that <em>light</em>, every time you need them to.</h1>
+      <p class="hero-sub">Repairs, installations, and inspections for gas, wood, and electric fireplaces — from North Vancouver to Langley. One visit, one honest quote, no guesswork. In business for 30 years.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="tel:6042997761">Call 604 299 7761</a>
+        <a class="btn btn-ghost" href="#contact">Request a quote</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="kicker">Get in touch</div>
+      <p style="color:#4E4330; font-size:0.95rem;">Same-week appointments across the region. Tell us what's wrong or what you're planning, and we'll size up the job before we show up.</p>
+      <div class="cities">
+        <span>Vancouver</span><span>Burnaby</span><span>Surrey</span><span>Richmond</span>
+        <span>Coquitlam</span><span>Langley</span>
+      </div>
+      <div class="phone-line">
+        <a href="tel:6042997761">604 299 7761</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap">
+    <div><strong>30 years</strong> in business</div>
+    <div><strong>Gas · wood · electric</strong> — every fireplace type</div>
+    <div><strong>Licensed &amp; insured</strong> gas fitting</div>
+    <div><strong>Lower Mainland wide</strong> — 13 municipalities served</div>
+  </div>
+</div>
+
+<section class="brands-section">
+  <div class="wrap">
+    <p class="brands-label">Repaired &amp; installed — every major brand, gas or wood</p>
+    <div class="brands-grid">
+      <span class="brand-pill">Montigo</span>
+      <span class="brand-pill">Regency</span>
+      <span class="brand-pill">Valor</span>
+      <span class="brand-pill">Napoleon</span>
+      <span class="brand-pill">Heat &amp; Glo</span>
+      <span class="brand-pill">Mendota</span>
+      <span class="brand-pill">Kingsman</span>
+      <span class="brand-pill">Fireplace Xtrordinair</span>
+      <span class="brand-pill">Continental</span>
+      <span class="brand-pill">Pacific Energy</span>
+      <span class="brand-pill">Osburn</span>
+      <span class="brand-pill">Superior</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we handle</h2>
+      <p>From a pilot light that won't stay lit to a full masonry-to-gas conversion — most jobs fall into one of these.</p>
+    </div>
+    <div class="services">
+      <div class="service">
+        <div>
+          <h3>Repair &amp; troubleshooting</h3>
+          <p>Won't light, won't stay lit, smells off, or making noise — we diagnose it on the first visit and fix it on the spot when parts allow.</p>
+        </div>
+        <div class="tag">Most common call</div>
+      </div>
+      <div class="service">
+        <div>
+          <h3>New installation</h3>
+          <p>Gas inserts, freestanding units, and electric fireplaces, fitted to your home and venting setup — with permits handled where required.</p>
+        </div>
+        <div class="tag">Gas &amp; electric</div>
+      </div>
+      <div class="service">
+        <div>
+          <h3>Wood-to-gas conversion</h3>
+          <p>Swap an old wood-burning firebox for a gas insert — less mess, more heat control, and no more hauling wood.</p>
+        </div>
+        <div class="tag">Popular upgrade</div>
+      </div>
+      <div class="service">
+        <div>
+          <h3>Cleaning &amp; chimney sweep</h3>
+          <p>Creosote and soot removal, flue clearing, and a full clean-out before the heating season starts.</p>
+        </div>
+        <div class="tag">Seasonal</div>
+      </div>
+      <div class="service">
+        <div>
+          <h3>Safety inspection</h3>
+          <p>A full check of venting, gas lines, and clearances — useful before a sale, after a reno, or just for peace of mind.</p>
+        </div>
+        <div class="tag">Pre-sale ready</div>
+      </div>
+      <div class="service">
+        <div>
+          <h3>Parts &amp; glass replacement</h3>
+          <p>Cracked glass, worn igniters, thermocouples, remotes and blowers — replaced with the right part for your make and model.</p>
+        </div>
+        <div class="tag">Same-week</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>How a visit goes</h2>
+      <p>Straightforward from the first call to the final test-fire.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>You call or write in</h3>
+        <p>Tell us what's happening and what kind of fireplace you have.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>We quote the job</h3>
+        <p>A clear price range before anyone steps on site.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>We do the work</h3>
+        <p>Repair, install, or sweep — done clean, done right.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <h3>We test it with you</h3>
+        <p>You see it lit and running before we leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="area">
+  <div class="wrap area-wrap">
+    <div>
+      <div class="section-head" style="margin-bottom:0;">
+        <h2>Wherever you are in the Lower Mainland</h2>
+      </div>
+      <p style="color:var(--ash); margin-top:18px; max-width:44ch;">If you're within these municipalities, we can likely get to you this week. Not listed? Call anyway — we cover most of the surrounding region too.</p>
+    </div>
+    <div class="area-list">
+      <div>Vancouver</div>
+      <div>North Vancouver</div>
+      <div>West Vancouver</div>
+      <div>Burnaby</div>
+      <div>New Westminster</div>
+      <div>Richmond</div>
+      <div>Surrey</div>
+      <div>Delta</div>
+      <div>Langley</div>
+      <div>Coquitlam</div>
+      <div>Port Coquitlam</div>
+      <div>Port Moody</div>
+      <div>Maple Ridge</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <p class="quote">"They found the actual problem in ten minutes — a part the last company never mentioned. Fireplace's worked perfectly since."</p>
+    <p class="quote-by">— Homeowner, Coquitlam</p>
+  </div>
+</section>
+
+<section class="section" id="contact" style="border-bottom:none;">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Get a quote</h2>
+      <p>Call, email, or send the details below — whichever's easiest.</p>
+    </div>
+    <div class="contact">
+      <div class="ticket">
+        <div class="ticket-row"><span>Business</span><span>Vanco Wide Fireplace</span></div>
+        <div class="ticket-row"><span>Phone</span><a href="tel:6042997761">604 299 7761</a></div>
+        <div class="ticket-row"><span>Secondary phone</span><a href="tel:6047200304">604 720 0304</a></div>
+        <div class="ticket-row"><span>Email</span><a href="mailto:ednegahdar@gmail.com">ednegahdar@gmail.com</a></div>
+        <div class="ticket-row"><span>Service area</span><span>Lower Mainland, BC</span></div>
+        <div class="ticket-row"><span>Hours</span><span>Mon – Sat, 8am – 6pm</span></div>
+        <div class="ticket-row"><span>Emergency service</span><span>Sunday available</span></div>
+        <p class="ticket-cta" style="color:var(--ash); font-size:0.9rem;">Prefer to talk it through? A phone call is usually the fastest way to get a same-week appointment.</p>
+      </div>
+      <div class="form-side">
+        <h3>Request a callback</h3>
+        <p class="sub">Fill this in and we'll reach out to confirm details and timing.</p>
+        <form action="mailto:ednegahdar@gmail.com" method="post" enctype="text/plain">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" placeholder="604 000 0000" required>
+          </div>
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" name="city" type="text" placeholder="e.g. Burnaby">
+          </div>
+          <div class="field">
+            <label for="job">What's going on?</label>
+            <textarea id="job" name="job" placeholder="Repair, installation, cleaning..."></textarea>
+          </div>
+          <button class="submit-btn" type="submit">Send request</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© 2026 Vanco Wide Fireplace</span>
+  <span>604 299 7761 · 604 720 0304 · ednegahdar@gmail.com</span>
+</footer>
+
+</body>
+</html>
