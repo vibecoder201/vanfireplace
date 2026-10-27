@@ -40,15 +40,14 @@
   .btn.line:hover{ box-shadow:inset 0 0 0 1px #fff; background:transparent; }
 
   .hero{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:stretch; padding:40px 0 72px; }
-  .hero h1{ font-weight:800; font-size:clamp(2.5rem,5.2vw,4.2rem); color:#fff; max-width:15ch; }
+  .hero h1{ font-weight:800; font-stretch:100%; font-size:clamp(2.2rem,4.4vw,3.5rem); line-height:1.1; color:#fff; max-width:17ch; }
   .hero .lede{ margin-top:22px; max-width:46ch; color:#C5D5D9; font-size:1.1rem; }
-  .bigphone{ display:block; margin-top:36px; font-family:'Archivo',sans-serif; font-stretch:118%; font-weight:800; font-size:clamp(2.2rem,5.6vw,4rem); color:var(--gas); text-decoration:none; line-height:1; letter-spacing:-0.01em; }
-  .bigphone:hover{ color:#FFC93A; }
-  .alt{ margin-top:12px; color:#A9BEC4; }
-  .alt a{ color:#fff; }
+  .phones{ margin-top:34px; display:grid; gap:10px; }
+  .phones a{ font-family:'Archivo',sans-serif; font-stretch:112%; font-weight:800; font-size:clamp(1.9rem,4vw,2.8rem); color:var(--gas); text-decoration:none; line-height:1.05; letter-spacing:-0.01em; }
+  .phones a:hover{ color:#FFC93A; }
   .hero .actions{ margin-top:28px; display:flex; gap:12px; flex-wrap:wrap; }
   .hero figure{ margin:0; position:relative; min-height:420px; }
-  .hero figure img{ width:100%; height:100%; object-fit:cover; border-radius:2px; background:var(--ink-2); }
+  .hero figure img{ width:100%; height:100%; object-fit:cover; object-position:50% 32%; border-radius:2px; background:var(--ink-2); }
   .hero figcaption{ position:absolute; left:0; bottom:0; right:0; padding:36px 18px 14px; font-size:0.85rem; color:#fff; background:linear-gradient(transparent,rgba(14,42,51,0.85)); }
 
   /* facts */
@@ -70,9 +69,10 @@
   .shots{ display:grid; grid-template-columns:repeat(12,1fr); gap:28px 24px; margin-top:44px; }
   .shots figure{ margin:0; }
   .shots img{ width:100%; height:100%; object-fit:cover; border-radius:2px; background:#DDE5E7; }
-  .shots .ph{ aspect-ratio:4/3; }
+  .shots .ph{ height:clamp(220px,28vw,360px); }
   .shots .a{ grid-column:span 7; } .shots .b{ grid-column:span 5; }
   .shots .c{ grid-column:span 5; } .shots .d{ grid-column:span 7; }
+  .shots .e{ grid-column:span 12; } .shots .e .ph{ height:clamp(200px,24vw,320px); } .shots .e img{ object-position:50% 40%; }
   .shots figcaption{ margin-top:10px; font-size:0.9rem; color:var(--steel); max-width:60ch; }
   .lists{ display:grid; grid-template-columns:1fr 1fr; gap:56px; margin-top:64px; }
   .lists h3{ margin-bottom:6px; }
@@ -110,6 +110,7 @@
     .facts{ grid-template-columns:1fr 1fr; }
     .row{ grid-template-columns:1fr; gap:6px; }
     .shots .a,.shots .b,.shots .c,.shots .d{ grid-column:span 12; }
+    .shots .ph, .shots .e .ph{ height:auto; aspect-ratio:4/3; }
     section.block,.contact{ padding:56px 0; }
   }
   @media (max-width:520px){ .facts{ grid-template-columns:1fr; } .bar .btn{ padding:10px 14px; } }
@@ -127,14 +128,15 @@
     <div class="hero">
       <div>
         <h1>Plumbing, heating and HVAC for Lower Mainland homes.</h1>
-        <p class="lede">A Merry Enterprises Ltd. company, in business since 1990. Licensed technicians, work done to BC code, and a clear quote before we start.</p>
-        <a class="bigphone" href="tel:6042997761">604 299 7761</a>
-        <p class="alt">or call <a href="tel:6047200304">604 720 0304</a></p>
+        <p class="lede">In business since 1990. Licensed technicians, work done to BC code, and a clear quote before we start.</p>
+        <div class="phones">
+          <a href="tel:6042997761">604 299 7761</a>
+          <a href="tel:6047200304">604 720 0304</a>
+        </div>
         <div class="actions"><a class="btn line" href="#contact">Request a callback</a></div>
       </div>
       <figure>
-        <img src="images/zoned.jpg" alt="Zoned heating manifold with organized copper and PEX piping">
-        <figcaption>Zoned heating distribution: piping and manifolds for balanced comfort in every room.</figcaption>
+        <img src="images/hero.jpg" alt="Pro Vanco Heating and Cooling service van">
       </figure>
     </div>
   </div>
@@ -172,6 +174,7 @@
       <figure class="b"><div class="ph"><img src="images/workmanship.jpg" alt="Finished mechanical room"></div><figcaption>From tight mechanical rooms to complex retrofits, the work is clean and to code.</figcaption></figure>
       <figure class="c"><div class="ph"><img src="images/modern.jpg" alt="Tankless system with organized piping"></div><figcaption>High-efficiency tankless system, installed to code with clean, organized piping.</figcaption></figure>
       <figure class="d"><div class="ph"><img src="images/hvac.jpg" alt="HVAC and heating installation"></div><figcaption>Energy-efficient heating and HVAC, sized to the home.</figcaption></figure>
+      <figure class="e"><div class="ph"><img src="images/zoned.jpg" alt="Zoned heating manifold with organized copper and PEX piping"></div><figcaption>Zoned heating distribution: precision piping and manifolds for balanced, efficient comfort in every room.</figcaption></figure>
     </div>
 
     <div class="lists">
